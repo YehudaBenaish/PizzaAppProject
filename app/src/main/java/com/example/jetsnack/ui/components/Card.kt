@@ -17,6 +17,8 @@
 package com.example.jetsnack.ui.components
 
 import android.content.res.Configuration
+import android.icu.number.NumberFormatter.UnitWidth
+import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -48,7 +50,9 @@ fun JetsnackCard(
         elevation = elevation,
         border = border,
         content = content
+
     )
+
 }
 
 @Preview("default")

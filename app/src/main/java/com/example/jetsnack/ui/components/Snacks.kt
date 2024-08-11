@@ -65,7 +65,7 @@ import com.example.jetsnack.model.snacks
 import com.example.jetsnack.ui.theme.JetsnackTheme
 import com.example.jetsnack.ui.utils.mirroringIcon
 
-private val HighlightCardWidth = 170.dp
+private val HighlightCardWidth = 320.dp
 private val HighlightCardPadding = 16.dp
 private val Density.cardWidthWithPaddingPx
     get() = (HighlightCardWidth + HighlightCardPadding).toPx()
@@ -135,7 +135,7 @@ private fun HighlightedSnacks(
 
     val gradient = when ((index / 2) % 2) {
         0 -> JetsnackTheme.colors.gradient6_1
-        else -> JetsnackTheme.colors.gradient6_2
+        else -> JetsnackTheme.colors.gradient6_1
     }
 
     LazyRow(
@@ -322,3 +322,5 @@ fun SnackCardPreview() {
         )
     }
 }
+
+

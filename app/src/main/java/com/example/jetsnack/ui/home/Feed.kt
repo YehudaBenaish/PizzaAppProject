@@ -47,7 +47,6 @@ import androidx.compose.ui.unit.dp
 import com.example.jetsnack.model.Filter
 import com.example.jetsnack.model.SnackCollection
 import com.example.jetsnack.model.SnackRepo
-import com.example.jetsnack.ui.components.FilterBar
 import com.example.jetsnack.ui.components.JetsnackDivider
 import com.example.jetsnack.ui.components.JetsnackScaffold
 import com.example.jetsnack.ui.components.JetsnackSurface
@@ -113,7 +112,7 @@ private fun SnackCollectionList(
                         WindowInsets.statusBars.add(WindowInsets(top = 56.dp))
                     )
                 )
-                FilterBar(filters, onShowFilters = { filtersVisible = true })
+                
             }
             itemsIndexed(snackCollections) { index, snackCollection ->
                 if (index > 0) {
@@ -135,9 +134,7 @@ private fun SnackCollectionList(
         ) + fadeIn(initialAlpha = 0.3f),
         exit = slideOutVertically() + shrinkVertically() + fadeOut()
     ) {
-        FilterScreen(
-            onDismiss = { filtersVisible = false }
-        )
+
     }
 }
 
