@@ -170,7 +170,7 @@ private fun CartContent(
             Text(
                 text = stringResource(R.string.cart_order_header, snackCountFormattedString),
                 style = MaterialTheme.typography.h6,
-                color = JetsnackTheme.colors.brand,
+                color = JetsnackTheme.colors.textSecondary,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
@@ -408,7 +408,7 @@ fun SummaryItem(
         Text(
             text = stringResource(R.string.cart_summary_header),
             style = MaterialTheme.typography.h6,
-            color = JetsnackTheme.colors.brand,
+            color = JetsnackTheme.colors.textSecondary,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier

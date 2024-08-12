@@ -35,13 +35,13 @@ private val mainFoods = SnackCollection(
     id = 1L,
     name = "Our main ones!",
     type = CollectionType.Highlight,
-    snacks = snacks.subList(0, 3)
+    snacks = snacks.subList(0, 4)
 )
 
 private val softDrinks = SnackCollection(
     id = 2L,
     name = "soft drinks",
-    snacks = snacks.subList(4, 10)
+    snacks = snacks.subList(5, 11)
 )
 
 
