@@ -1,19 +1,3 @@
-/*
- * Copyright 2020 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.jetsnack.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -31,6 +15,7 @@ private val LightColorPalette = JetsnackColors(
     uiBackground = Neutral0,
     uiBorder = Neutral4,
     uiFloated = FunctionalGrey,
+    textPrimary = Rose7,
     textSecondary = Neutral7,
     textHelp = Neutral6,
     textInteractive = Neutral0,
@@ -39,7 +24,7 @@ private val LightColorPalette = JetsnackColors(
     iconInteractive = Neutral0,
     iconInteractiveInactive = Neutral1,
     error = FunctionalRed,
-    gradient6_1 = listOf(Shadow4, Ocean3, Shadow2, Ocean3, Shadow4),
+    gradient6_1 = listOf(Rose9,Rose8 ,Rose7 , Rose6, Rose3),
     gradient6_2 = listOf(Rose4, Lavender3, Rose2, Lavender3, Rose4),
     gradient3_1 = listOf(Shadow2, Ocean3, Shadow4),
     gradient3_2 = listOf(Rose2, Lavender3, Rose4),
@@ -66,7 +51,7 @@ private val DarkColorPalette = JetsnackColors(
     iconInteractive = Neutral7,
     iconInteractiveInactive = Neutral6,
     error = FunctionalRedDark,
-    gradient6_1 = listOf(Shadow5, Ocean7, Shadow9, Ocean7, Shadow5),
+    gradient6_1 = listOf(FunctionalRed, FunctionalRedDark, FunctionalGrey, FunctionalGreen, FunctionalDarkGrey),
     gradient6_2 = listOf(Rose11, Lavender7, Rose8, Lavender7, Rose11),
     gradient3_1 = listOf(Shadow9, Ocean7, Shadow5),
     gradient3_2 = listOf(Rose8, Lavender7, Rose11),
@@ -117,8 +102,8 @@ data class JetsnackColors(
     val uiBackground: Color,
     val uiBorder: Color,
     val uiFloated: Color,
-    val interactivePrimary: List<Color> = gradient2_1,
-    val interactiveSecondary: List<Color> = gradient2_2,
+    val interactivePrimary: List<Color> = gradient6_1,
+    val interactiveSecondary: List<Color> = gradient6_1,
     val interactiveMask: List<Color> = gradient6_1,
     val textPrimary: Color = brand,
     val textSecondary: Color,

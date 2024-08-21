@@ -1,19 +1,3 @@
-/*
- * Copyright 2020 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.jetsnack.ui.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
@@ -51,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Density
@@ -65,7 +50,7 @@ import com.example.jetsnack.model.snacks
 import com.example.jetsnack.ui.theme.JetsnackTheme
 import com.example.jetsnack.ui.utils.mirroringIcon
 
-private val HighlightCardWidth = 170.dp
+private val HighlightCardWidth = 320.dp
 private val HighlightCardPadding = 16.dp
 private val Density.cardWidthWithPaddingPx
     get() = (HighlightCardWidth + HighlightCardPadding).toPx()
@@ -88,7 +73,7 @@ fun SnackCollection(
             Text(
                 text = snackCollection.name,
                 style = MaterialTheme.typography.h6,
-                color = JetsnackTheme.colors.brand,
+                color = JetsnackTheme.colors.textPrimary,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
@@ -135,7 +120,7 @@ private fun HighlightedSnacks(
 
     val gradient = when ((index / 2) % 2) {
         0 -> JetsnackTheme.colors.gradient6_1
-        else -> JetsnackTheme.colors.gradient6_2
+        else -> JetsnackTheme.colors.gradient6_1
     }
 
     LazyRow(
@@ -264,10 +249,13 @@ private fun HighlightSnackItem(
             Text(
                 text = snack.name,
                 maxLines = 1,
+                textAlign = TextAlign.End,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.h6,
                 color = JetsnackTheme.colors.textSecondary,
-                modifier = Modifier.padding(horizontal = 16.dp)
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
@@ -322,3 +310,5 @@ fun SnackCardPreview() {
         )
     }
 }
+
+

@@ -1,19 +1,3 @@
-/*
- * Copyright 2020 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.jetsnack.model
 
 import androidx.compose.runtime.Immutable
@@ -45,59 +29,40 @@ object SnackRepo {
     fun getLifeStyleFilters() = lifeStyleFilters
 }
 
-/**
- * Static data
- */
 
-private val tastyTreats = SnackCollection(
+
+private val mainFoods = SnackCollection(
     id = 1L,
-    name = "Android's picks",
+    name = "Our main ones!",
     type = CollectionType.Highlight,
-    snacks = snacks.subList(0, 13)
+    snacks = snacks.subList(0, 4)
 )
 
-private val popular = SnackCollection(
+private val softDrinks = SnackCollection(
     id = 2L,
-    name = "Popular on Jetsnack",
-    snacks = snacks.subList(14, 19)
+    name = "soft drinks",
+    snacks = snacks.subList(5, 11)
 )
 
-private val wfhFavs = tastyTreats.copy(
-    id = 3L,
-    name = "WFH favourites"
-)
 
-private val newlyAdded = popular.copy(
-    id = 4L,
-    name = "Newly Added"
-)
-
-private val exclusive = tastyTreats.copy(
+private val also = mainFoods.copy(
     id = 5L,
-    name = "Only on Jetsnack"
-)
-
-private val also = tastyTreats.copy(
-    id = 6L,
     name = "Customers also bought"
 )
 
-private val inspiredByCart = tastyTreats.copy(
-    id = 7L,
+private val inspiredByCart = mainFoods.copy(
+    id = 6L,
     name = "Inspired by your cart"
 )
 
 private val snackCollections = listOf(
-    tastyTreats,
-    popular,
-    wfhFavs,
-    newlyAdded,
-    exclusive
+    mainFoods,
+    softDrinks,
 )
 
 private val related = listOf(
     also,
-    popular
+    softDrinks
 )
 
 private val cart = listOf(
